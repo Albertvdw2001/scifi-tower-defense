@@ -3,25 +3,25 @@
 [ext_resource type="Script" uid="uid://bf1tcy3ijeu4v" path="res://projectiles/tase_proj.gd" id="1_qq5vr"]
 [ext_resource type="Texture2D" uid="uid://dcrt2e7y0ilu4" path="res://sprites/tase_proj.png" id="1_snk7n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_snk7n"]
-atlas = ExtResource("1_snk7n")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qq5vr"]
 atlas = ExtResource("1_snk7n")
 region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snk7n"]
+atlas = ExtResource("1_snk7n")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mggdq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_snk7n")
+"texture": SubResource("AtlasTexture_qq5vr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qq5vr")
+"texture": SubResource("AtlasTexture_snk7n")
 }],
 "loop": true,
-"name": &"attack_animation",
+"name": &"attack",
 "speed": 5.0
 }]
 
@@ -31,8 +31,7 @@ script = ExtResource("1_qq5vr")
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-16, -2)
 sprite_frames = SubResource("SpriteFrames_mggdq")
-animation = &"attack_animation"
-frame = 1
-frame_progress = 0.0833297
+animation = &"attack"
+frame_progress = 0.485316
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
