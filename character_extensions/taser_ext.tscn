@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnf602ys2aq4s"]
+[gd_scene load_steps=8 format=3 uid="uid://cnf602ys2aq4s"]
 
 [ext_resource type="Script" uid="uid://ckvqeodijr8uh" path="res://character_extensions/taser_ext.gd" id="1_qfvvg"]
 [ext_resource type="Texture2D" uid="uid://ba2vldktba2b5" path="res://sprites/taser_ext.png" id="2_fmi68"]
+[ext_resource type="PackedScene" uid="uid://ceiarhn35k7oc" path="res://projectiles/tase_proj.tscn" id="2_rc0xw"]
+[ext_resource type="Texture2D" uid="uid://d1q8lsogm3x6n" path="res://icon.svg" id="4_rc0xw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h8jnn"]
 atlas = ExtResource("2_fmi68")
@@ -27,9 +29,16 @@ animations = [{
 
 [node name="TaserExt" type="Node2D"]
 script = ExtResource("1_qfvvg")
+projectile = ExtResource("2_rc0xw")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rc0xw")
 animation = &"idle"
 
-[node name="ProjectiveSlot" type="Node" parent="."]
+[node name="ProjectileSlot" type="Node2D" parent="."]
+position = Vector2(18, 2)
+
+[node name="Positioner" type="Sprite2D" parent="ProjectileSlot"]
+visible = false
+scale = Vector2(0.0390625, 0.03125)
+texture = ExtResource("4_rc0xw")

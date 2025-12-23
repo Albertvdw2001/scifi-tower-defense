@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c7870td01vgr8"]
 
 [ext_resource type="Texture2D" uid="uid://dmrn7gpd16jpj" path="res://sprites/space_guy_idle.png" id="1_rcm8b"]
-[ext_resource type="Script" uid="uid://cq7rc0vioueje" path="res://player.gd" id="1_wyww8"]
+[ext_resource type="Script" uid="uid://cq7rc0vioueje" path="res://base_scripts/player.gd" id="1_wyww8"]
 [ext_resource type="Texture2D" uid="uid://coyqcatotvsfd" path="res://sprites/space_guy_walk.png" id="2_ht318"]
 [ext_resource type="PackedScene" uid="uid://cnf602ys2aq4s" path="res://character_extensions/taser_ext.tscn" id="2_kgq77"]
 
