@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhayn3hl6ekua"]
+[gd_scene load_steps=3 format=3 uid="uid://dhayn3hl6ekua"]
 
 [ext_resource type="PackedScene" uid="uid://c7870td01vgr8" path="res://characters/space_guy.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dmdbaikrc0eae" path="res://characters/enemy.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 
@@ -8,3 +9,6 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.845, 3.845)
+
+[node name="enemy" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(111, -3)

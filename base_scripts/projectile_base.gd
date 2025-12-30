@@ -13,6 +13,12 @@ var direction: Vector2 = Vector2.RIGHT
 # speed at which a non-static projectile moves
 @export var movement_speed: float = 500
 
+# damage that projectile does
+@export var damage: int = 10
+
+# for static projectiles. interval at which damage is applied
+@export var static_damage_interval_sec: float
+
 
 func _physics_process(delta: float) -> void:
 	if is_static:
