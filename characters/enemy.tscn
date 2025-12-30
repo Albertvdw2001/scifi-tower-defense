@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmdbaikrc0eae"]
+
+[ext_resource type="Script" uid="uid://deh7gpb0wgpop" path="res://characters/enemy.gd" id="1_nhupr"]
+[ext_resource type="Texture2D" uid="uid://de45utkvoryor" path="res://sprites/enemy-placeholder-Sheet.png" id="1_wa0eo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhupr"]
+atlas = ExtResource("1_wa0eo")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ohc2"]
+atlas = ExtResource("1_wa0eo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggbst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhupr")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ohc2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_nhupr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ggbst")
+animation = &"idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-12, -7, -17, -9, -22, -4, -23, -3, -22, 0, -17, 4, -12, 4, -11, 8, -12, 13, -11, 21, -8, 24, -5, 24, -4, 23, -1, 23, 1, 23, 3, 24, 6, 25, 8, 23, 10, 21, 10, 18, 10, 17, 9, 15, 9, 14, 10, 11, 10, 7, 11, 4, 16, 4, 20, 1, 22, -2, 21, -7, 17, -9, 15, -10, 14, -9, 12, -10, 11, -15, 9, -14, 7, -15, 6, -17, 0, -17, -3, -17, -5, -17, -7, -16, -9, -14, -11, -12, -11, -11)
