@@ -28,6 +28,19 @@ func _physics_process(delta: float) -> void:
 		apply_movement(delta)
 
 
+func _ready() -> void:
+	body_entered.connect(on_entered)
+	print("signal connected")
+
+
+func on_entered(body: Node):
+	print("collision triggered")
+	if body is Enemy:
+		print("collision is enemy")
+		body.take_damage(damage)
+	print("collision is not enemy")
+
+
 func is_attack_released() -> bool:
 	if not Input.is_action_pressed("attack"):
 		return true

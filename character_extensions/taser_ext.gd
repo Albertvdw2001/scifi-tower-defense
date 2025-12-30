@@ -15,7 +15,7 @@ func apply_look_point_direction():
 	var mouse_pos = get_global_mouse_position()
 	look_at(mouse_pos)
 
-# spawns (or "instantiates") a new instance of object assigned to 'projectile'
+# spawns (or rather "instantiates") a new instance of object assigned to 'projectile'
 # inside 'projectile_slot'
 func spawn_projectile():
 	var new_projectile = projectile.instantiate() as ProjectileBase
