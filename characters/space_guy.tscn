@@ -1,12 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7870td01vgr8"]
+[gd_scene load_steps=14 format=3 uid="uid://c7870td01vgr8"]
 
 [ext_resource type="Texture2D" uid="uid://dmrn7gpd16jpj" path="res://sprites/space_guy_idle.png" id="1_rcm8b"]
 [ext_resource type="Script" uid="uid://cq7rc0vioueje" path="res://base_scripts/player.gd" id="1_wyww8"]
 [ext_resource type="Texture2D" uid="uid://coyqcatotvsfd" path="res://sprites/space_guy_walk.png" id="2_ht318"]
 [ext_resource type="PackedScene" uid="uid://cnf602ys2aq4s" path="res://character_extensions/taser_ext.tscn" id="2_kgq77"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wyww8"]
-radius = 19.0263
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ht318"]
 atlas = ExtResource("1_rcm8b")
@@ -81,11 +78,10 @@ animations = [{
 script = ExtResource("1_wyww8")
 test_ext = ExtResource("2_kgq77")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -2)
-shape = SubResource("CircleShape2D_wyww8")
-
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uyjq7")
 animation = &"walk"
 frame_progress = 0.834586
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-11, -18, 1, -16, 2, -12, 4, -10, 3, -7, 3, -3, 5, -2, 6, 4, 5, 8, 2, 10, -1, 15, -5, 16, -9, 11, -14, 11, -15, 5, -15, -1, -14, -6, -13, -11, -13, -18)

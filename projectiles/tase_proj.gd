@@ -3,6 +3,7 @@ extends ProjectileBase
 @onready var anim_sprite: AnimatedSprite2D = $AnimSprite
 
 func _ready() -> void:
+	super._ready()
 	play_attack_animation()
 
 

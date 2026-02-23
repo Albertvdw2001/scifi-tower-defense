@@ -13,8 +13,8 @@ var direction: Vector2 = Vector2.RIGHT
 # speed at which a non-static projectile moves
 @export var movement_speed: float = 500
 
-# damage that projectile does
-@export var damage: int = 10
+# damage that projectile oesd
+@export var damage: int = 100
 
 # for static projectiles. interval at which damage is applied
 @export var static_damage_interval_sec: float
