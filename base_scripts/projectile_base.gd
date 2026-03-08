@@ -8,12 +8,12 @@ var direction: Vector2 = Vector2.RIGHT
 # true if projectile sticks to weapon (e.g. taser electric shock)
 @export var is_static: bool = false
 
-@export var attack_animation_name: String = "attack_animation"
+@export var attack_animation_string: String = "attack"
 
 # speed at which a non-static projectile moves
 @export var movement_speed: float = 500
 
-# damage that projectile oesd
+# damage that a single instance of the projectile does per
 @export var damage: int = 100
 
 # for static projectiles. interval at which damage is applied
@@ -30,24 +30,16 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	body_entered.connect(on_entered)
-	print("signal connected")
 
 
 func on_entered(body: Node):
-	print("collision triggered")
 	if body is Enemy:
-		print("collision is enemy")
 		body.take_damage(damage)
-	print("collision is not enemy")
 
 
 func is_attack_released() -> bool:
-	if not Input.is_action_pressed("attack"):
-		return true
-	else:
-		return false
+	return not Input.is_action_pressed("attack")
 
 
 func apply_movement(delta: float):
 	global_position += direction * movement_speed * delta
-	

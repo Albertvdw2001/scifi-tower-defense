@@ -1,7 +1,11 @@
 extends Node2D
 
 @export var projectile: PackedScene
-@export var is_static_projectile: bool = true
+@export var is_static_projectile: bool
+# whether an extension with a non-static projectile is automatic (hold attack) or semi-automatic (fire one per attack press)
+@export var is_automatic: bool = true
+
+@export var attack_animation_string: String = "attack"
 
 @onready var projectile_slot: Node2D = $ProjectileSlot
 
@@ -27,5 +31,3 @@ func spawn_projectile():
 		new_projectile.direction = Vector2.RIGHT.rotated(projectile_slot.global_rotation)
 		new_projectile.global_position = projectile_slot.global_position
 		get_tree().current_scene.add_child(new_projectile)
-
-	

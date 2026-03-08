@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func play_attack_animation() -> void:
-	if anim_sprite.animation != "attack":
-		anim_sprite.play("attack")
+	if anim_sprite.animation != attack_animation_string:
+		anim_sprite.play(attack_animation_string)
 	else:
 		anim_sprite.play()
